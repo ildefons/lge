@@ -49,6 +49,8 @@ def parse_args():
     parser.add_argument("--vec-env-cls", type=str, choices=["subproc", "dummy"], help="Vector environment class")
     parser.add_argument("--tags", type=str, default="", nargs="+", help="List of tags, e.g.: --tag before-modif pr-32")
 
+    #print("parser:",parser.parse_args())
+
     return parser.parse_args()
 
 
@@ -136,5 +138,5 @@ if __name__ == "__main__":
     else:
         callbacks.append(NumberCellsLogger(freq))
 
-    model.explore(num_timesteps, callback=CallbackList(callbacks))
+    model.explore(um_timesteps, callback=CallbackList(callbacks))
     run.finish()

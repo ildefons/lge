@@ -26,8 +26,14 @@ def is_atari(env_id: str) -> bool:
 
     Returns:
         bool: True if the environment is an Atari environment, False otherwise."""
-    entry_point = gym.envs.registry.env_specs[env_id].entry_point
-    return "AtariEnv" in str(entry_point)
+    
+    if env_id in gym.envs.registry.env_specs:
+        entry_point = gym.envs.registry.env_specs[env_id].entry_point
+        return "AtariEnv" in str(entry_point)
+    else:
+        return False
+    # entry_point = gym.envs.registry.env_specs[env_id].entry_point
+    # return "AtariEnv" in str(entry_point)
 
 
 class DoneOnLifeLost(gym.Wrapper):

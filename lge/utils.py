@@ -67,6 +67,10 @@ def estimate_density(x: Tensor, samples: Tensor) -> Tensor:
     # multiple identical values in the dataset. Consequently, most points would have a k-st closest dist to zero.
     # That's why we take a larger k. Empiraically, k = 1000 seem to work well.
     k = 1000
+
+    if samples.shape[0] < int(k/2):
+        k = int(samples.shape[0]/2)      
+
     cdist = torch.cdist(x, samples)
     dist_to_kst = cdist.topk(k, largest=False)[0][:, -1]
     return -dist_to_kst
