@@ -16,6 +16,25 @@ cd lge
 pip install -e .
 ```
 
+### Installation (added by Ildefons)
+
+* create conda environment python 3.9
+* python -m ipykernel install --user --name=lge39 --display-name "lge39"
+* conda install ipykernel
+
+
+* python -m pip uninstall pip
+* python -m ensurepip --upgrade
+* python -m pip install pip==24.0 --force-reinstall
+* pip install gym==0.21
+
+* pip install tensorflow
+* pip install opencv-python
+* pip install git+https://github.com/qgallouedec/gym-continuous-maze.git
+* pip install wandb
+* pip install qdarkstyle
+* pip install aiohttp
+
 ## Usage
 
 
