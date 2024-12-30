@@ -138,5 +138,5 @@ if __name__ == "__main__":
     else:
         callbacks.append(NumberCellsLogger(freq))
 
-    model.explore(um_timesteps, callback=CallbackList(callbacks))
+    model.explore(num_timesteps, callback=CallbackList(callbacks))
     run.finish()
