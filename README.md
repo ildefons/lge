@@ -16,17 +16,26 @@ cd lge
 pip install -e .
 ```
 
+
+### Installation CUDA driver (added by Ildefons)
+
+* sudo apt update
+* sudo apt install nvidia-driver-525  # Example for driver version 525
+* sudo reboot
+
+
 ### Installation (added by Ildefons)
 
 * create conda environment python 3.9
 * python -m ipykernel install --user --name=lge39 --display-name "lge39"
 * conda install ipykernel
 
-
+* pip install setuptools==65.5.0 "wheel<0.40.0"
 * python -m pip uninstall pip
 * python -m ensurepip --upgrade
 * python -m pip install pip==24.0 --force-reinstall
 * pip install gym==0.21
+ 
 
 * pip install tensorflow
 * pip install opencv-python
@@ -34,6 +43,8 @@ pip install -e .
 * pip install wandb
 * pip install qdarkstyle
 * pip install aiohttp
+
+* pip install -e . 
 
 ## Usage
 
